@@ -28,7 +28,7 @@ export const getNotes = () => {
 
 export const deleteNote = (id) => {
   // to quote Prof. Cormen: left as an exercise to the reader
-  return NoteModel.findAndDeleteById(id).then((result) => {
+  return NoteModel.findByIdAndRemove(id).then((result) => {
     console.log('del success');
   })
     .catch((error) => {

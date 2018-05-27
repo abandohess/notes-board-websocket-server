@@ -80,7 +80,9 @@ io.on('connection', (socket) => {
 
   // on deleteNote do what is needful
   socket.on('deleteNote', (id) => {
-    Notes.deleteNote(id);
+    Notes.deleteNote(id).then(() => {
+      pushNotes();
+    });
   });
 });
 
